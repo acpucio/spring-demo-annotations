@@ -14,18 +14,22 @@ public class MainDemoApp {
 				new AnnotationConfigApplicationContext(DemoConfig.class);
 		
 		// get bean from spring container
-		AccountDAO theAccountDAO = context.getBean("accountDAO", AccountDAO.class);
+		AccountDAO theAccountDAO = 
+				context.getBean("accountDAO", AccountDAO.class);
 		
 		// GET MEMBERship bean from spring container
 		MembershipDAO theMembershipDAO = 
 				context.getBean("membershipDAO", MembershipDAO.class);
 		
 		// call the business method
-		theAccountDAO.addAccount();
+		Account myAccount = new Account();
+		theAccountDAO.addAccount(myAccount, true);
+		theAccountDAO.doWork();
 		
 		// call the membership business method
 		theMembershipDAO.addSillyMember();
-				
+		theMembershipDAO.goToSleep();
+		
 		// close the context
 		context.close();
 
