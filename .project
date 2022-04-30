@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>spring-demo-app</name>
+	<name>spring-demo-aop-point-cut-order-aspects</name>
 	<comment></comment>
 	<projects>
 	</projects>
